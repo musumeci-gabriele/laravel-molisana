@@ -1,0 +1,31 @@
+// header top
+header {
+  .logo{
+    padding: 30px 0;
+    text-align: center;
+
+    img {
+      height: 100px;
+    }
+
+    .main-nav {
+      &-list {
+        display: flex;
+        justify-content: center;
+
+        a {
+          padding: 10px 15px;
+          text-decoration: none;
+          color: #000;
+          font-weight: bold;
+          font-size: 24px;
+
+          &.active {
+            background-color: $mainColor;
+          }
+        }
+      }
+    }
+  }
+}
+// header top
