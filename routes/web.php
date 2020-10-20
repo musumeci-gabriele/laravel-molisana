@@ -19,13 +19,11 @@ Route::get('/', function () {
 })->name("home");
 
 // prodotti
-Route::get('prodotti', function () {
+Route::get('/prodotti', function () {
     return view('prodotti');
 })->name("prodotti");
-//
-
 
 // news
-Route::get('news', function () {
+Route::get('/news', function () {
     return view('news');
 })->name("news");

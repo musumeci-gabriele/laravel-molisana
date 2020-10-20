@@ -1,12 +1,13 @@
-@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css);* {
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css);@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@400;
+
+700&display=swap);* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.page-container {
-  width: 1124px;
-  margin: auto;
+body {
+  font-family: "Roboto", sans-serif;
 }
 
 ul {
@@ -22,12 +23,12 @@ header .logo img {
   height: 100px;
 }
 
-header .logo .main-nav-list {
+header .main-nav-list {
   display: flex;
   justify-content: center;
 }
 
-header .logo .main-nav-list a {
+header .main-nav-list a {
   padding: 10px 15px;
   text-decoration: none;
   color: #000;
@@ -35,7 +36,7 @@ header .logo .main-nav-list a {
   font-size: 24px;
 }
 
-header .logo .main-nav-list a.active {
-  background-color: #B3ESFC;
+header .main-nav-list a.active {
+  background-color: #B3E5FC;
 }
 

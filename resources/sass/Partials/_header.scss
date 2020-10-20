@@ -1,4 +1,4 @@
-// header top
+// header
 header {
   .logo{
     padding: 30px 0;
@@ -7,25 +7,25 @@ header {
     img {
       height: 100px;
     }
+  }
 
-    .main-nav {
-      &-list {
-        display: flex;
-        justify-content: center;
+  .main-nav {
+    &-list {
+      display: flex;
+      justify-content: center;
 
-        a {
-          padding: 10px 15px;
-          text-decoration: none;
-          color: #000;
-          font-weight: bold;
-          font-size: 24px;
+      a {
+        padding: 10px 15px;
+        text-decoration: none;
+        color: #000;
+        font-weight: bold;
+        font-size: 24px;
 
-          &.active {
-            background-color: $mainColor;
-          }
+        &.active {
+          background-color: $mainColor;
         }
       }
     }
   }
 }
-// header top
+// header

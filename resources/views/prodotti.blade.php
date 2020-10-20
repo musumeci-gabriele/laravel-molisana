@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('title')
-  Pagina Prodotti
+  Prodotti
 @endsection
 
 @section('mainContent')
