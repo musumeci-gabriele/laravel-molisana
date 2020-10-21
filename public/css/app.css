@@ -20,7 +20,7 @@ header .logo {
 }
 
 header .logo img {
-  height: 100px;
+  height: 150px;
 }
 
 header .main-nav-list {
@@ -38,5 +38,18 @@ header .main-nav-list a {
 
 header .main-nav-list a.active {
   background-color: #B3E5FC;
+}
+
+main {
+  margin: 20px;
+}
+
+main h3 {
+  font-size: 30px;
+  color: #002d75;
+}
+
+main li > img {
+  height: 200px;
 }
 
