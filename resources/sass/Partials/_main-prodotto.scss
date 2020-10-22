@@ -1,0 +1,51 @@
+.sezione-dettaglio-prodotto {
+  background-color: $bg-dettaglio-prodotto;
+  padding: 40px 0;
+  position: relative;
+
+  h1 {
+    color: $color-pasta-type;
+    font-size: $size-pasta-type;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  img {
+    width: 100%;
+    display: block;
+  }
+
+  .descrizione-prodotto {
+    color: $color-pasta-type;
+    font-size: $size-menu-text;
+    font-weight: 600;
+  }
+
+  .change-product {
+    position: absolute;
+    top: 45%;
+    background-color: $bg-change-product;
+    padding: 10px;
+
+    a {
+      color: $color-layover-title;
+      font-size: 70px;
+      text-decoration: none;
+
+      i {
+        display: block;
+      }
+    }
+
+    &.prev {
+      left: 0;
+      border-radius: 0 5px 5px 0;
+    }
+
+    &.next {
+      right: 0;
+      border-radius: 5px 0 0 5px;
+    }
+  }
+
+}

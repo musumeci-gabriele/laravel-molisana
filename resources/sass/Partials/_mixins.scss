@@ -1,1 +1,4 @@
-// function
+@mixin menu-inline {
+  display: flex;
+  list-style: none;
+}

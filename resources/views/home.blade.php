@@ -1,46 +1,64 @@
-@extends('layout.main')
+{{-- collegamento al main --}}
+@extends('layouts.main')
 
-<!-- PHP -->
 @php
-// collegamento al db-paste
-$data = config('paste')
+  // collegamento al db-paste
+  $data = config('db_paste')
+
+  // array tipologie di pasta
+  $tipi_pasta = [
+    "Le lunghe" => [],
+    "Le corte" => [],
+    "Le cortissime" => []
+  ];
+
+  // ciclo suddivisione tipologia pasta
+  foreach ($data as $key => $prodotto) {
+    $prodotto["id"] = $key;
+
+    if ($prodotto["tipo"] == "lunga") {
+      $tipi_pasta["Le lunghe"][] = $prodotto;
+    } elseif ($prodotto["tipo"] == "corta") {
+        $tipi_pasta["Le corte"][] = $prodotto;
+    } elseif ($prodotto["tipo"] == "cortissima") {
+        $tipi_pasta["Le cortissime"][] = $prodotto;
+    }
+
+  }
 @endphp
-<!-- End PHP -->
 
-
-<!-- Main content -->
-@section('mainContent')
-  <main>
-    <img src="{{asset('images/fondo-pag-speciali.jpg')}}" alt="background">
-    <h3>LE LUNGHE</h3>
-    <ul>
-      @foreach ($data as $dato)
-        @if($dato["tipo"] === "lunga")
-          <li><img src="{{$dato["src"]}}" alt="immagine pasta"></li>
-          <a href="#"><h4>{{$dato["titolo"]}}</h4></a>
-        @endif
-      @endforeach
-    </ul>
-
-    <h3>LE CORTE</h3>
-    <ul>
-      @foreach ($data as $dato)
-        @if($dato["tipo"] === "corta")
-          <li><img src="{{$dato["src"]}}" alt="immagine pasta"></li>
-          <h4>{{$dato["titolo"]}}</h4>
-        @endif
-      @endforeach
-    </ul>
-
-    <h3>LE CORTISSIME</h3>
-    <ul>
-      @foreach ($data as $dato)
-        @if($dato["tipo"] === "cortissima")
-        <li><img src="{{$dato["src"]}}" alt="immagine pasta"></li>
-        <h4>{{$dato["titolo"]}}</h4>
-        @endif
-      @endforeach
-    </ul>
-  </main>
+{{-- modifica titolo --}}
+@section('title')
+  Home
 @endsection
-<!-- // Main content -->
+
+@section('main-content')
+
+  <div class="pasta-section">
+    <div class="container">
+
+      @foreach ($tipi_pasta as $key => $tipo_pasta)
+        @if (!empty($tipo_pasta))
+          <h2>{{ $key }}</h2>
+
+          <ul class="pasta-menu">
+            @foreach ($tipo_pasta as $prodotto)
+              <li class="box-prodotto">
+                <img class="immagine-prodotto" src="{{ $prodotto["src"] }}" alt="Immagine pasta">
+
+                <div class="layover">
+                  <h3><a href="prodotti/show/{{ $prodotto["id"] }}">{{ $prodotto["titolo"] }}</a></h3>
+                  <a href="prodotti/show/{{ $prodotto["id"] }}"><img src="{{ asset("images/icon.svg")}}" alt="Icona posate"></a>
+                </div>
+
+              </li>
+            @endforeach
+          </ul>
+
+        @endif
+      @endforeach
+
+    </div>
+  </div>
+
+@endsection

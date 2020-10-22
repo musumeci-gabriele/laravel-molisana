@@ -20,27 +20,55 @@ Route::get('/', function () {
 
 // prodotti
 Route::get('/prodotti', function () {
-    // link al db paste
-    $data = config('paste');
 
-    // genero array per richiamare i tipi di paste
-    $paste = [];
+    $data = config("pasta");
+
+    $tipi_pasta = [
+      "Le lunghe" => [],
+      "Le corte" => [],
+      "Le cortissime" => []
+    ];
+
     foreach ($data as $key => $prodotto) {
       $prodotto["id"] = $key;
-      $paste[$prodotto["tipo"]][] = $prodotto;
+      if ($prodotto["tipo"] == "lunga") {
+        $tipi_pasta["Le lunghe"][] = $prodotto;
+
+      } elseif ($prodotto["tipo"] == "corta") {
+          $tipi_pasta["Le corte"][] = $prodotto;
+
+      } elseif ($prodotto["tipo"] == "cortissima") {
+          $tipi_pasta["Le cortissime"][] = $prodotto;
+      }
     }
 
-    // link alla pag prodotti con link al db paste
-    return view('prodotti', ["paste" => $paste]);
-})->name("prodotti");
+    return view('prodotti', ["tipi_pasta" => $tipi_pasta]);
+
+})->name('prodotti');
 
 // prodotto singolo
 Route::get('/prodotti/show/{id}', function ($id) {
 
-  $prodotto = config("pasta.$id");
+  if (config("pasta.$id") == null) {
+    abort("404 - Non presente.");
+  }
 
-  return view('prodotto-singolo', ["data" => $prodotto]);
-})->where('id', '[0-9]+')-> name("dettaglio-prodotto");
+  $numero_prodotti = count(config("pasta"));
+  $data = config("pasta.$id");
+  $next_id = $id + 1;
+  $prev_id = $id - 1;
+
+  return view('prodotto-singolo',
+    [
+      "prodotto" => $data,
+      "numero_prodotti" => $numero_prodotti,
+      "id" => $id,
+      "next_id" => $next_id,
+      "prev_id" => $prev_id
+    ]
+  );
+
+})->where('id', '[0-9]+')->name('dettaglio-prodotto');
 
 // news
 Route::get('/news', function () {

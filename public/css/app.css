@@ -38,6 +38,7 @@ header .main-nav-list a {
 
 header .main-nav-list a.active {
   background-color: #B3E5FC;
+  transition: 1.2s;
 }
 
 main {

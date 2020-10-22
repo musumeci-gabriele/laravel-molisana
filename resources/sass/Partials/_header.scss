@@ -1,31 +1,32 @@
-// header
 header {
-  .logo{
-    padding: 30px 0;
-    text-align: center;
 
-    img {
-      height: 150px;
-    }
+  .logo {
+    padding: 50px 0;
+    text-align: center;
   }
 
-  .main-nav {
-    &-list {
-      display: flex;
+  .header-navbar {
+    .main-menu {
+      @include menu-inline;
       justify-content: center;
 
-      a {
-        padding: 10px 15px;
-        text-decoration: none;
-        color: #000;
-        font-weight: bold;
-        font-size: 24px;
+      li {
+        margin: 0 10px;
 
-        &.active {
-          background-color: $mainColor;
+        a {
+          color: $color-menu-text;
+          text-decoration: none;
+          font-size: $size-menu-text;
+          font-weight: $weight-menu-text;
+          padding: 25px 10px;
+          display: inline-block;
         }
       }
+
+      .active {
+        background-color: $bg-current-page;
+      }
+
     }
   }
 }
-// header

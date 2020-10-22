@@ -4,6 +4,6 @@
   News
 @endsection
 
-@section('mainContent')
+@section('main-content')
   <h1>Le News</h1>
 @endsection
