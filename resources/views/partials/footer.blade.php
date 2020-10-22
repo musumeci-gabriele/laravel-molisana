@@ -2,9 +2,11 @@
   <div class="footer">
     <div class="container">
       <div class="footer-row">
+
         <div class="footer-contact footer-column">
+
           <div class="footer-logo">
-            <img src="{{ asset("images/logo-molisana.png") }}" alt="Logo Molisana">
+            <img src="{{ asset("images/logo.png") }}" alt="Logo Molisana">
           </div>
           <ul class="list-contact">
             <li>Ragione sociale: La Molisana S.P.A.</li>
@@ -18,7 +20,9 @@
             <li>numero verde 800818081</li>
             <li>telefono 3801292455</li>
           </ul>
+
         </div>
+
         <div class="footer-center footer-column">
           <h2>Pastificio</h2>
           <ul class="menu-footer">
@@ -42,6 +46,7 @@
             <li><a href="#">Le Extra di Lusso</a></li>
           </ul>
         </div>
+
         <div class="footer-right footer-column">
           <h2>Collezione da chef</h2>
           <ul class="menu-footer">
@@ -51,6 +56,7 @@
             <li><a href="#">Quadrate</a></li>
           </ul>
         </div>
+
       </div>
     </div>
   </div>

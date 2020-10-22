@@ -1,8 +1,7 @@
-
-@extends('layouts.main')
+@extends('layout.main')
 
 @section('title')
-{{ $prodotto["titolo"] }}
+  {{ $prodotto["titolo"] }}
 @endsection
 
 @section('main-content')

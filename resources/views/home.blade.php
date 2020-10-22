@@ -1,9 +1,9 @@
 {{-- collegamento al main --}}
-@extends('layouts.main')
+@extends('layout.main')
 
 @php
   // collegamento al db-paste
-  $data = config('db_paste')
+  $data = config('db_paste');
 
   // array tipologie di pasta
   $tipi_pasta = [
@@ -18,8 +18,10 @@
 
     if ($prodotto["tipo"] == "lunga") {
       $tipi_pasta["Le lunghe"][] = $prodotto;
+
     } elseif ($prodotto["tipo"] == "corta") {
         $tipi_pasta["Le corte"][] = $prodotto;
+
     } elseif ($prodotto["tipo"] == "cortissima") {
         $tipi_pasta["Le cortissime"][] = $prodotto;
     }

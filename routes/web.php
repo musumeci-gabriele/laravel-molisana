@@ -21,7 +21,7 @@ Route::get('/', function () {
 // prodotti
 Route::get('/prodotti', function () {
 
-    $data = config("pasta");
+    $data = config("db_paste");
 
     $tipi_pasta = [
       "Le lunghe" => [],
@@ -49,12 +49,12 @@ Route::get('/prodotti', function () {
 // prodotto singolo
 Route::get('/prodotti/show/{id}', function ($id) {
 
-  if (config("pasta.$id") == null) {
-    abort("404 - Non presente.");
+  if (config("db_paste.$id") == null) {
+    abort("404");
   }
 
-  $numero_prodotti = count(config("pasta"));
-  $data = config("pasta.$id");
+  $numero_prodotti = count(config("db_paste"));
+  $data = config("db_paste.$id");
   $next_id = $id + 1;
   $prev_id = $id - 1;
 
